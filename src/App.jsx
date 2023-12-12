@@ -1,12 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./components/header";
-import DisplaySection from "./components/DisplaySection";
-import ArticleCard from "./components/ArticleCard";
-
+import Header from "./components/Home/header";
+import DisplaySection from "./components/Home/DisplaySection";
+import ArticleCard from "./components/ArticleCard/ArticleCard";
 
 function App() {
-  
   return (
     <>
       <Header />
