@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleId, getAllComments } from "./singleArticle";
 import ArticleBody from "./ArticleBody";
+import Comments from "./Comments";
 
 const ArticleCard = () => {
   const { article_id } = useParams();
@@ -18,41 +19,15 @@ const ArticleCard = () => {
 
   useEffect(() => {
     getAllComments(article_id).then((res) => {
-      console.log(res.data);
       setFetchedComment(res.data.comment);
     });
     return () => {};
   }, [article_id]);
 
-const formatDateTime = (createdAt) => {
-  const options = {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-  };
-
-  return new Date(createdAt).toLocaleString(undefined, options);
-};
-
   return (
     <div>
       <ArticleBody fetchedArticle={fetchedArticle} />
-      <div>
-        <ol>
-          {fetchedComments.map((comment) => (
-            <li key={comment.comment_id}>
-              <p>Author: {comment.author}</p>
-              <p>Body: {comment.body}</p>
-              <p>
-                <p>Created At: {formatDateTime(comment.created_at)}</p>
-              </p>
-              <p>Votes: {comment.votes}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <Comments fetchedComments={fetchedComments} />
     </div>
   );
 };
