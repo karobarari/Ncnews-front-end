@@ -7,7 +7,7 @@ const Articles = ({ articles }) => {
     <ul>
       {articles.map((article) => {
         return (
-          <li onClick={handleClick}>
+          <li key={article.article_id} onClick={handleClick}>
             <h2>{article.title}</h2>
             <img src={article.article_img_url} alt="" />
             <h3>author: {article.author}</h3>
