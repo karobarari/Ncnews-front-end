@@ -1,19 +1,18 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { getAlltopics } from "./queryAxios";
 
 const Querybar = ({ setChosenTopic }) => {
   const [topics, setTopics] = useState([]); //for map
 
   const handleQueryChange = (event) => {
-    
-      setChosenTopic(event.target.value);
-    
+    setChosenTopic(event.target.value);
   };
   useEffect(() => {
-    axios.get("https://ncnews-yzwd.onrender.com/api/topics").then((res) => {
+    getAlltopics().then((res) => {
       setTopics(res.data.topics);
     });
-  }, [topics]);
+  }, []);
 
   return (
     <div className="query-container">
