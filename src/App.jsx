@@ -1,12 +1,17 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./components/header";
-import DisplaySection from "./components/DisplaySection";
+import Header from "./components/Home/header";
+import DisplaySection from "./components/Home/DisplaySection";
+import ArticleCard from "./components/ArticleCard/ArticleCard";
 
 function App() {
   return (
     <>
       <Header />
-      <DisplaySection />
+      <Routes>
+        <Route path="/" element={<DisplaySection />} />
+        <Route path="/ArticleCard/:article_id" element={<ArticleCard />} />
+      </Routes>
     </>
   );
 }
