@@ -21,7 +21,7 @@ const Header = () => {
           Todays Date: <br />
           {date}/{month}/{year}
         </p>
-        <button onClick={handleLogout}>log out</button>
+        <button onClick={handleLogout}>back to login</button>
       </div>
     </div>
   );

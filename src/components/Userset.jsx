@@ -31,7 +31,6 @@ export const UserProvider = ({ children }) => {
       }
     });
   }, [loginUsername]);
-  console.log(user);
   const logout = () => {
     // Your logout logic here
     setUser(null);
