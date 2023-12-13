@@ -15,6 +15,8 @@
 
 /* Add styles for the user details section */
 .user-details {
+  padding: 10px;
+  background-color: #f0c8c8a7;
   float: right;
   display: flex;
   align-items: center;

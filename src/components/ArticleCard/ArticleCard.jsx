@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getArticleId, getAllComments } from "./singleArticle";
 import ArticleBody from "./ArticleBody";
 import Comments from "./Comments";
+import Header from "../header";
 
 const ArticleCard = () => {
   const { article_id } = useParams();

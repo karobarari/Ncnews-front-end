@@ -3,6 +3,7 @@ import Articles from "./Articles";
 import Querybar from "./Queries";
 import { useEffect, useState } from "react";
 import { getQueries, getAllArticles } from "./queryAxios";
+import Header from "../header";
 
 const DisplaySection = () => {
   const [articles, setArticles] = useState([]);

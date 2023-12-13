@@ -1,10 +1,18 @@
+import { useContext, useEffect } from "react";
+import { UserContext } from "./Userset";
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
+  const navigate = useNavigate();
+  const { user, } = useContext(UserContext);
+
   let newDate = new Date();
   let date = newDate.getDate();
   let month = newDate.getMonth() + 1;
   let year = newDate.getFullYear();
-  const username = "John Doe"; 
-
+  const handleLogout = () => {
+    navigate("/")
+  };
   return (
     <div className="Header">
       <h1>NC news</h1>
@@ -13,13 +21,7 @@ const Header = () => {
           Todays Date: <br />
           {date}/{month}/{year}
         </p>
-      </div>
-      <div className="user-detailes">
-        <img className="avatar-img"
-          src="https://media.istockphoto.com/id/677518676/photo/football-player-standing-with-arms-crossed.jpg?s=612x612&w=is&k=20&c=1HJo1OQs6lFSej1IMjs5RpxXbQnkuIa2LbE6TS8Bzd8="
-          alt="user avatar"
-        />
-        <h3>{username}</h3>
+        <button onClick={handleLogout}>log out</button>
       </div>
     </div>
   );
