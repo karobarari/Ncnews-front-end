@@ -168,3 +168,14 @@ button {
 button:hover {
   background-color: #005a8e;
 }
+/* Example CSS */
+.comments-section {
+  list-style: none;
+  padding: 0;
+}
+
+.comments-section li {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}

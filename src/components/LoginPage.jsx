@@ -7,17 +7,20 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const { login } = useContext(UserContext);
   const [validUsernames, setValidUsernames] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getUsers().then((res) => {
       const usernames = res.map((user) => user.username);
       setValidUsernames(usernames);
+      setLoading(false);
     });
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(username)
+    login(username);
   };
   return (
     <div>
@@ -31,9 +34,11 @@ const LoginPage = () => {
         <button type="submit">Login</button>
       </form>
       <p>validUsernames: </p>
-      {validUsernames.map((username) => (
-        <p key={username}>{username}</p>
-      ))}
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        validUsernames.map((username) => <p key={username}>{username}</p>)
+      )}
     </div>
   );
 };

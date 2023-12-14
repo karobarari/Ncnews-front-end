@@ -10,9 +10,7 @@ const Header = () => {
   let date = newDate.getDate();
   let month = newDate.getMonth() + 1;
   let year = newDate.getFullYear();
-  const handleLogout = () => {
-    navigate("/")
-  };
+ 
   return (
     <div className="Header">
       <h1>NC news</h1>
@@ -21,7 +19,6 @@ const Header = () => {
           Todays Date: <br />
           {date}/{month}/{year}
         </p>
-        <button onClick={handleLogout}>back to login</button>
       </div>
     </div>
   );
