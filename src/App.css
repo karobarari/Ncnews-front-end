@@ -126,49 +126,71 @@ body {
   background-color: #f8f8f8;
 }
 
-.single-article {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 8px;
-}
+/* styles.css */
+/* styles.css */
 
-h2 {
-  color: #333;
+.single-article {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
 h3 {
-  color: #555;
+  font-size: 16px;
+  font-weight: bold;
+  color: #262626;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #262626;
 }
 
 img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 15px;
+  margin-top: 10px;
   border-radius: 8px;
 }
 
-p {
-  line-height: 1.6;
-  color: #333;
-}
-
 button {
-  background-color: #0072bb;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #3897f0;
   color: #fff;
-  padding: 10px 20px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #005a8e;
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
 }
-/* Example CSS */
+form {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+p {
+  margin-top: 10px;
+  color: #262626;
+}
+
+/* Add more styles as needed */
+
 .comments-section {
   list-style: none;
   padding: 0;
@@ -179,3 +201,59 @@ button:hover {
   padding: 10px;
   border: 1px solid #e0e0e0;
 }
+/* comments.css */
+
+ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+/* Style the author's name */
+li p:first-child {
+  font-weight: bold;
+}
+
+/* Style the creation date */
+li p:nth-child(3) {
+  color: #888;
+}
+
+/* Style the votes */
+li p:last-child {
+  font-weight: bold;
+  color: #4caf50; /* Green color for votes */
+}
+/* Header.css */
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #3498db;
+  color: #fff;
+}
+
+.header-title {
+  cursor: pointer;
+}
+
+.user-info {
+  margin-right: 20px;
+}
+
+.date-section {
+  text-align: right;
+}
+
+/* Adjust styles based on your design preferences */

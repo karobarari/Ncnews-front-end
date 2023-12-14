@@ -1,23 +1,36 @@
-import { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "./Userset";
 import { useNavigate } from "react-router-dom";
+import { format } from "date-fns";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { user, } = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const currentDateTime = new Date();
+  const formattedDate = format(currentDateTime, "yyyy-MM-dd HH:mm");
 
-  let newDate = new Date();
-  let date = newDate.getDate();
-  let month = newDate.getMonth() + 1;
-  let year = newDate.getFullYear();
- 
+  const handleBackToLogin = () => {
+    // Navigate to the login page when the "Back to Login" button is clicked
+    navigate("/");
+  };
+
   return (
-    <div className="Header">
-      <h1>NC news</h1>
+    <div className="header-container">
+      <h1 className="header-title" onClick={() => navigate("/")}>
+        NC News
+      </h1>
+      <div className="user-info">
+        {user ? (
+          <>
+            <p>Loged in as: {user.username}!</p>
+            <button onClick={handleBackToLogin}>Back to Login</button>
+          </>
+        ) : null}
+      </div>
       <div className="date-section">
         <p>
-          Todays Date: <br />
-          {date}/{month}/{year}
+          Today's Date: <br />
+          {formattedDate}
         </p>
       </div>
     </div>

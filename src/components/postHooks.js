@@ -2,12 +2,13 @@ import axios from "axios";
 
 export const postComment = (articleId, Username, CmBody) => {
   return axios
-    .post(`https://ncnews-yzwd.onrender.com/api/articles/1/comments`, {
-      username: "tickle122",
-      body: "testing comment",
+    .post(`https://ncnews-yzwd.onrender.com/api/articles/${articleId}/comments`, {
+      username: Username,
+      body: CmBody,
+      
     })
     .then((res) => {
-     return; res
+     return res
     })
     .catch((err) => {
       console.log(err);

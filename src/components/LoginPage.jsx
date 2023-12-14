@@ -7,38 +7,55 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const { login } = useContext(UserContext);
   const [validUsernames, setValidUsernames] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    getUsers().then((res) => {
-      const usernames = res.map((user) => user.username);
-      setValidUsernames(usernames);
-      setLoading(false);
-    });
+    getUsers()
+      .then((res) => {
+        const usernames = res.map((user) => user.username);
+        setValidUsernames(usernames);
+      })
+      .then(() => setLoading(false));
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (username.trim() === "") {
+      return;
+    }
     login(username);
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <button type="submit">Login</button>
+        <label>
+          Select a username:
+          <select
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          >
+            <option value="" disabled>
+              Choose a username
+            </option>
+            {loading ? (
+              <option value="" disabled>
+                Loading...
+              </option>
+            ) : (
+              validUsernames.map((username) => (
+                <option value={username} key={username}>
+                  {username}
+                </option>
+              ))
+            )}
+          </select>
+        </label>
+
+        <button type="submit" disabled={loading}>
+          Login
+        </button>
       </form>
-      <p>validUsernames: </p>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        validUsernames.map((username) => <p key={username}>{username}</p>)
-      )}
     </div>
   );
 };
