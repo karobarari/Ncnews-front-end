@@ -1,14 +1,15 @@
-import axios from "axios";
 import Articles from "./Articles";
 import Querybar from "./Queries";
 import { useEffect, useState } from "react";
 import { getQueries, getAllArticles } from "./queryAxios";
-import Header from "../header";
+import { imageGenerator } from "../postHooks";
+
 
 const DisplaySection = () => {
   const [articles, setArticles] = useState([]);
   const [chosenTopic, setChosenTopic] = useState("");
   const [loading, setLoading] = useState(false);
+  const [avatars, setAvatars] = useState([]);
 
   useEffect(() => {
     setLoading(true); // Set loading to true when starting the API request
@@ -28,6 +29,13 @@ const DisplaySection = () => {
     }
   }, [chosenTopic]);
 
+  useEffect(() => {
+    // Use imageGenerator to fetch avatars for unique authors
+    imageGenerator(articles).then((res) => {
+      setAvatars(res);
+    });
+  }, [articles]);
+
   return (
     <div className="home-display-section">
       <Querybar setChosenTopic={setChosenTopic} />
@@ -37,7 +45,7 @@ const DisplaySection = () => {
         <p>Loading...</p>
       ) : (
         <div className="articles-list">
-          <Articles articles={articles} />
+          <Articles avatars={avatars} articles={articles} />
         </div>
       )}
     </div>

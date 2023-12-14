@@ -1,20 +1,17 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleId, getAllComments } from "./singleArticle";
 import ArticleBody from "./ArticleBody";
 import Comments from "./Comments";
-import { format } from "date-fns";
+import { imageGenerator } from "../postHooks";
 
 const ArticleCard = () => {
   const { article_id } = useParams();
   const [fetchedArticle, setFetchArticle] = useState([]);
   const [fetchedComments, setFetchedComment] = useState([]);
-  const currentDateTime = new Date();
-  const formattedDate = format(currentDateTime, "yyyy-MM-dd HH:mm:ss");
+ 
 
   const [newComment, setNewComment] = useState({});
-
   useEffect(() => {
     getArticleId(article_id).then((res) => {
       setFetchArticle(res.data.article);
@@ -36,7 +33,10 @@ const ArticleCard = () => {
         setNewComment={setNewComment}
         fetchedArticle={fetchedArticle}
       />
-      <Comments newComment={newComment} fetchedComments={fetchedComments} />
+      <Comments
+        newComment={newComment}
+        fetchedComments={fetchedComments}
+      />
     </div>
   );
 };

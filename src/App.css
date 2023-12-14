@@ -21,7 +21,6 @@
   display: flex;
   align-items: center;
 }
-
 /* Style the username */
 
 h3 {
@@ -89,12 +88,6 @@ ul {
   background-color: #e6f7ff; /* Add a different background color for the clicked state */
 }
 
-.articles-list li img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
 
 .articles-list li h2 {
   font-size: 1.8rem;
@@ -153,8 +146,8 @@ h2 {
 img {
   max-width: 100%;
   height: auto;
-  margin-top: 10px;
-  border-radius: 8px;
+  border-radius: 50%; /* Applies a circular border radius for a profile picture effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle box shadow for depth */
 }
 
 button {

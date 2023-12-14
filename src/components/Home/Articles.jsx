@@ -1,21 +1,17 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../header";
 
-const Articles = ({ articles }) => {
-  const [article, setArticle] = useState(0);
+const Articles = ({ avatars, articles }) => {
   const navigate = useNavigate();
 
   const handleClick = (event, articleId) => {
     event.preventDefault();
-    setArticle(articleId);
-    navigate(`/ArticleCard/${articleId}`);
+    navigate(`/Articles/${articleId}`);
   };
 
   return (
     <>
-    <ul>
-        {articles.map((article) => (
+      <ul>
+        {articles.map((article, index) => (
           <li
             value={article.article_id}
             key={article.article_id}
@@ -24,6 +20,13 @@ const Articles = ({ articles }) => {
             <h2>{article.title}</h2>
             <img src={article.article_img_url} alt="" />
             <h3>author: {article.author}</h3>
+            {avatars[index] && (
+              <img
+                className="avatar-img"
+                src={avatars[index].avatar_url}
+                alt=""
+              />
+            )}
             <p>Comments: {article.comment_count}</p>
             <p>votes: {article.votes}</p>
           </li>
