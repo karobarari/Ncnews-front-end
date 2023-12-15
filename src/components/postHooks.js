@@ -31,12 +31,12 @@ export const getUsers = () => {
 
 export const deleteComment = (comment_id) => {
   return axios
-    .delete(`https://ncnews-yzwd.onrender.com/api/comments/1`)
+    .delete(`https://ncnews-yzwd.onrender.com/api/comments/${comment_id}`)
     .then((res) => {
       return res;
     })
     .catch((err) => {
-      console.log(err);
+      throw err
     });
 };
 
