@@ -1,21 +1,12 @@
 import axios from "axios";
 
-export const getQueries = (chosenTopic) => {
+export const getQueries = (chosenTopic, order, sortby) => {
   return axios
-    .get(`https://ncnews-yzwd.onrender.com/api/articles?topic=${chosenTopic}`)
+    .get(
+      `https://ncnews-yzwd.onrender.com/api/articles?topic=${chosenTopic}&sort_by=${sortby}&order=${order}`
+    )
     .then((res) => {
-      return res;
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error.message);
-    });
-};
-
-export const getAllArticles = () => {
-  return axios
-    .get(`https://ncnews-yzwd.onrender.com/api/articles`)
-    .then((res) => {
-      return res;
+      return res.data.articles;
     })
     .catch((error) => {
       console.error("Error fetching data:", error.message);
@@ -25,7 +16,7 @@ export const getAlltopics = () => {
   return axios
     .get("https://ncnews-yzwd.onrender.com/api/topics")
     .then((res) => {
-      return res;
+      return res.data.topics;
     })
     .catch((error) => {
       console.error("Error fetching data:", error.message);

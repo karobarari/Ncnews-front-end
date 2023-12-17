@@ -10,10 +10,10 @@ const Header = () => {
   const formattedDate = format(currentDateTime, "yyyy-MM-dd HH:mm");
 
   const handleBackToLogin = () => {
-    // Navigate to the login page when the "Back to Login" button is clicked
     navigate("/");
   };
 
+  
   return (
     <div className="header-container">
       <h1 className="header-title" onClick={() => navigate("/")}>

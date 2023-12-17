@@ -9,9 +9,9 @@ const ArticleCard = () => {
   const { article_id } = useParams();
   const [fetchedArticle, setFetchArticle] = useState([]);
   const [fetchedComments, setFetchedComment] = useState([]);
- 
-
   const [newComment, setNewComment] = useState({});
+
+
   useEffect(() => {
     getArticleId(article_id).then((res) => {
       setFetchArticle(res.data.article);
@@ -19,7 +19,6 @@ const ArticleCard = () => {
     setNewComment({});
     return () => {};
   }, [article_id]);
-
   useEffect(() => {
     getAllComments(article_id).then((res) => {
       setFetchedComment(res.data.comment);

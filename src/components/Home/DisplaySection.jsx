@@ -1,51 +1,36 @@
 import Articles from "./Articles";
 import Querybar from "./Queries";
 import { useEffect, useState } from "react";
-import { getQueries, getAllArticles } from "./queryAxios";
-import { imageGenerator } from "../postHooks";
-
+import { getQueries } from "./queryAxios";
+import { useSearchParams } from "react-router-dom";
 
 const DisplaySection = () => {
   const [articles, setArticles] = useState([]);
-  const [chosenTopic, setChosenTopic] = useState("");
   const [loading, setLoading] = useState(false);
-  const [avatars, setAvatars] = useState([]);
-
+  const [searchParams, setsearchParams] = useSearchParams();
+  const order = searchParams.get("order");
+  const sortby = searchParams.get("sortby");
+  const topic = searchParams.get("topic");
+console.log(topic,order,sortby);
   useEffect(() => {
-    setLoading(true); // Set loading to true when starting the API request
-
-    if (chosenTopic !== "alltopics") {
-      getQueries(chosenTopic)
-        .then((res) => {
-          setArticles(res.data.articles);
-        })
-        .finally(() => setLoading(false)); // Set loading to false when the API request is complete
-    } else {
-      getAllArticles()
-        .then((response) => {
-          setArticles(response.data.articles);
-        })
-        .finally(() => setLoading(false)); // Set loading to false when the API request is complete
-    }
-  }, [chosenTopic]);
-
-  useEffect(() => {
-    // Use imageGenerator to fetch avatars for unique authors
-    imageGenerator(articles).then((res) => {
-      setAvatars(res);
-    });
-  }, [articles]);
+    setLoading(true);
+    getQueries(topic, order, sortby)
+      .then((response) => {
+        setArticles(response);
+      })
+      .finally(() => setLoading(false));
+      return ()=>{}
+  }, [order, sortby, topic]);
 
   return (
     <div className="home-display-section">
-      <Querybar setChosenTopic={setChosenTopic} />
-      <h2>{chosenTopic}</h2>
+      <Querybar loading={loading}/>
 
       {loading ? (
         <p>Loading...</p>
       ) : (
         <div className="articles-list">
-          <Articles avatars={avatars} articles={articles} />
+          <Articles articles={articles} />
         </div>
       )}
     </div>

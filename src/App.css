@@ -233,7 +233,7 @@ li p:last-child {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #3498db;
+  background-color: #d44242ad;
   color: #fff;
 }
 
@@ -250,3 +250,45 @@ li p:last-child {
 }
 
 /* Adjust styles based on your design preferences */
+/* Add these styles to your existing CSS or create a new CSS file */
+
+
+/* Optional: Add hover effect for better user experience */
+.topic-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.order-toggle {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.order-toggle.oldest {
+  background-color: #5cb85c; /* Green color for Oldest */
+  color: white;
+}
+
+.order-toggle.latest {
+  background-color: #d9534f; /* Red color for Latest */
+  color: white;
+}
+.topic-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.topic-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}

@@ -7,7 +7,6 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
-    // Attempt to retrieve user data from localStorage
     const storedUser = localStorage.getItem("user");
     return storedUser
       ? JSON.parse(storedUser)

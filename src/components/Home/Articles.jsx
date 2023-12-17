@@ -1,12 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import { imageGenerator } from "../postHooks";
+import { useEffect, useState } from "react";
 
-const Articles = ({ avatars, articles }) => {
+const Articles = ({ articles }) => {
+    const [avatars, setAvatars] = useState([]);
+
   const navigate = useNavigate();
 
   const handleClick = (event, articleId) => {
     event.preventDefault();
-    navigate(`/Articles/${articleId}`);
+    navigate(`/articles/${articleId}`);
   };
+
+  useEffect(() => {
+    imageGenerator(articles).then((res) => {
+      setAvatars(res);
+    });
+  }, [articles]);
 
   return (
     <>
