@@ -26,8 +26,8 @@ export const getQueries = (chosenTopic, order = "ASC", sortby) => {
   }
 };
 export const getAlltopics = () => {
-  return axios
-    .get("https://ncnews-yzwd.onrender.com/api/topics")
+  return instance
+    .get("/topics")
     .then((res) => {
       return res.data.topics;
     })
