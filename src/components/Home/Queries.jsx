@@ -14,7 +14,9 @@ const Querybar = ({ loading }) => {
         return top.slug;
       });
       setSlugs(slugs);
-    });
+    }).catch(()=>{
+      
+    })
   }, []);
   const handleSortChange = (event) => {
     event.preventDefault();
@@ -32,18 +34,19 @@ const Querybar = ({ loading }) => {
     setTopic(event.target.value);
   };
   const handleOrderChange = (event) => {
-  if (event.target.value === "order") {
-    setOrder("created_at");
-  }
+    if (event.target.value === "order") {
+      setOrder("created_at");
+    }
     setOrder(event.target.value);
   };
+
   return (
     <div>
       <div>
         {loading ? (
           <p>loading filter...</p>
         ) : (
-          <form >
+          <form>
             <select
               onChange={(event) => {
                 handleTopicChange(event);
@@ -59,7 +62,7 @@ const Querybar = ({ loading }) => {
               })}
             </select>
             <select onChange={handleOrderChange}>
-              <option >order</option>
+              <option>order</option>
 
               <option value="ASC">latest</option>
               <option value="DESC">oldest</option>

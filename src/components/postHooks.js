@@ -11,10 +11,11 @@ export const postComment = (articleId, Username, CmBody) => {
       }
     )
     .then((res) => {
-      return res;
+      return res.data.postedCm;
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((error) => {
+      console.error("Error fetching data:", error.message);
+      throw error;
     });
 };
 
@@ -36,7 +37,7 @@ export const deleteComment = (comment_id) => {
       return res;
     })
     .catch((err) => {
-      throw err
+      throw err;
     });
 };
 

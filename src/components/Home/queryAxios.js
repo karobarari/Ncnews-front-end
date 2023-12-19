@@ -4,7 +4,11 @@ const instance = axios.create({
   baseURL: "https://ncnews-yzwd.onrender.com/api",
 });
 
-export const getQueries = (chosenTopic, order = "ASC", sortby) => {
+export const getQueries = (
+  chosenTopic,
+  order = "ASC",
+  sortby = "created_at"
+) => {
   if (chosenTopic || order || sortby) {
     return instance
       .get(`/articles?topic=${chosenTopic}&sort_by=${sortby}&order=${order}`)
@@ -13,6 +17,7 @@ export const getQueries = (chosenTopic, order = "ASC", sortby) => {
       })
       .catch((error) => {
         console.error("Error fetching data:", error.message);
+        throw error;
       });
   } else {
     return instance
@@ -22,6 +27,7 @@ export const getQueries = (chosenTopic, order = "ASC", sortby) => {
       })
       .catch((error) => {
         console.error("Error fetching data:", error.message);
+        throw error;
       });
   }
 };
@@ -33,5 +39,6 @@ export const getAlltopics = () => {
     })
     .catch((error) => {
       console.error("Error fetching data:", error.message);
+      throw error;
     });
 };

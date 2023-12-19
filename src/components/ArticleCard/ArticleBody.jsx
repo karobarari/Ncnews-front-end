@@ -13,7 +13,7 @@ const ArticleBody = ({ setNewComment, fetchedArticle }) => {
   const formattedDate = format(currentDateTime, "yyyy-MM-dd HH:mm:ss");
   const { user } = useContext(UserContext);
   const [isClicked, setIsClicked] = useState({ like: false, dislike: false });
-
+  const [postCommentError, setPostCommentError] = useState(null);
   const {
     author,
     article_img_url,
@@ -74,19 +74,23 @@ const ArticleBody = ({ setNewComment, fetchedArticle }) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    setNewComment({
-      article_id: fetchedArticle.article_id,
-      author: user.username,
-      comment_id: fetchedArticle.comment_id,
-      created_at: formattedDate,
-      votes: fetchedArticle.comment_id,
-      body: input ? input : "",
-    });
-    postComment(fetchedArticle.article_id, user.username, input).then(
-      (res) => {}
-    );
+    const regex = /\S/g; //pervents from posting only white space.
+    if (input.length !== 0 && regex.test(input)) {
+      setPostCommentError("");
+      setNewComment({
+        article_id: fetchedArticle.article_id,
+        author: user.username,
+        comment_id: fetchedArticle.comment_id,
+        created_at: formattedDate,
+        votes: fetchedArticle.comment_id,
+        body: input,
+      });
+      postComment(fetchedArticle.article_id, user.username, input);
+    } else {
+      setPostCommentError("can't post an empty comment!");
+    }
   };
+
   return (
     <div className="single-article">
       <h3>author: {author}</h3>
@@ -102,6 +106,11 @@ const ArticleBody = ({ setNewComment, fetchedArticle }) => {
       <button onClick={handleDislike}>👎</button>
       <form onSubmit={handleSubmit}>
         <textarea type="text" onChange={handleChange} value={input} />
+        {postCommentError ? (
+          <p className="error-paragraph">{postCommentError}</p>
+        ) : (
+          ""
+        )}
         <p>{500 - input.length} remaining characters</p>
         <button disabled={input.length > 500} type="submit">
           post a comment

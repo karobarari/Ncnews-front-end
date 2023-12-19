@@ -3,7 +3,7 @@ import { imageGenerator } from "../postHooks";
 import { useEffect, useState } from "react";
 
 const Articles = ({ articles }) => {
-    const [avatars, setAvatars] = useState([]);
+  const [avatars, setAvatars] = useState([]);
 
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const Articles = ({ articles }) => {
             onClick={(event) => handleClick(event, article.article_id)}
           >
             <h2>{article.title}</h2>
-            <img src={article.article_img_url} alt="" />
+            <img src={article.article_img_url} alt="article-image" />
             <h3>author: {article.author}</h3>
             {avatars[index] && (
               <img

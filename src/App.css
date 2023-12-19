@@ -3,31 +3,44 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-.Header {
-  background-color: #df7b7bc1;
+}/* Header.css */
+
+.header-container {
+  background-color: #005689;
+  color: #ffffff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 8px;
 }
-.date-section {
-  float: left;
-  margin-right: 20px;
+
+.header-title {
+  font-size: 24px;
+  margin: 0;
+  cursor: pointer;
 }
 
-/* Add styles for the user details section */
-.user-details {
-  padding: 10px;
-  background-color: #f0c8c8a7;
-  float: right;
+.user-info {
   display: flex;
   align-items: center;
 }
-/* Style the username */
 
-h3 {
-  margin-right: 8px; /* Add some margin between the username and the image */
-  color: #333; /* Set the text color */
+.user-info p {
+  margin: 0;
+  margin-right: 10px;
 }
-/* Style the image within the user details section as a round avatar */
+
+.user-info button {
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.date-section p {
+  margin: 0;
+  font-size: 14px;
+}
 
 .avatar-img {
   height: 2rem;
@@ -291,4 +304,8 @@ li p:last-child {
   &:hover {
     background-color: #f0f0f0;
   }
+}
+.error-paragraph{
+  background-color: rgba(255, 0, 0, 0.63);
+  
 }
