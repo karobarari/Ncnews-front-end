@@ -42,12 +42,13 @@ const Querybar = ({ loading }) => {
 
   return (
     <div>
-      <div>
+      <div class="flex items-center justify-center pb-4">
         {loading ? (
           <p>loading filter...</p>
         ) : (
-          <form>
+          <form class="flex space-x-1">
             <select
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               onChange={(event) => {
                 handleTopicChange(event);
               }}
@@ -61,13 +62,19 @@ const Querybar = ({ loading }) => {
                 );
               })}
             </select>
-            <select onChange={handleOrderChange}>
+            <select
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              onChange={handleOrderChange}
+            >
               <option>order</option>
 
               <option value="ASC">latest</option>
               <option value="DESC">oldest</option>
             </select>
-            <select onChange={handleSortChange}>
+            <select
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              onChange={handleSortChange}
+            >
               <option value="Sortby">Sort by</option>
               <option value="votes">Votes</option>
               <option value="comment_count">Comments</option>
@@ -77,7 +84,9 @@ const Querybar = ({ loading }) => {
               <NavLink
                 to={`/articles?topic=${topic}&order=${order}&sortby=${sort}`}
               >
-                <button disabled={loading}>search</button>
+                <button   disabled={loading}>
+                  search
+                </button>
               </NavLink>
             </nav>{" "}
           </form>
