@@ -1,6 +1,6 @@
 // AuthContext.js
 import { createContext, useEffect, useState } from "react";
-import { getUsers } from "./postHooks";
+import { getUsers } from "./LoginPage/costumHooks";
 import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext();

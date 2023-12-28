@@ -3,8 +3,9 @@ import "./App.css";
 import Header from "./components/header";
 import DisplaySection from "./components/Home/DisplaySection";
 import ArticleCard from "./components/ArticleCard/ArticleCard";
-import LoginPage from "./components/LoginPage";
-import {ErrorPage} from "./components/ErrorPage";
+import LoginPage from "./components/LoginPage/LoginPage";
+import { ErrorPage } from "./components/ErrorPage";
+import PostArticle from "./components/PostArticle/PostArticle";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/articles" element={<DisplaySection />} />
         <Route path="/articles/:article_id" element={<ArticleCard />} />
+        <Route path="/articlePost" element={<PostArticle />} />
       </Routes>
     </>
   );

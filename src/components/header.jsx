@@ -5,12 +5,12 @@ import { format } from "date-fns";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { user,logout } = useContext(UserContext);
+  const { user, logout } = useContext(UserContext);
   const currentDateTime = new Date();
   const formattedDate = format(currentDateTime, "yyyy-MM-dd HH:mm");
 
   const handleBackToLogin = () => {
-    logout()
+    logout();
     navigate("/");
   };
   return (
@@ -24,8 +24,11 @@ const Header = () => {
         {user ? (
           <>
             <p class="bg-[#fffcdfbe] font-sm rounded-lg text-xs p-3 py-2 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2">
-             
-                <img class="max-h-8" src={user.avatar_url} alt="user avatar" />
+              <img
+                class="max-h-8 rounded-full"
+                src={user.avatar_url}
+                alt="user avatar"
+              />
               Logged in as: {user.username}
             </p>
             <div class="flex flex-row justify-between">

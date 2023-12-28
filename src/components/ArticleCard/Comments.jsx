@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { formatDateTime } from "../formatDateTime";
+import { formatDateTime } from "../LoginPage/formatDateTime";
 import { UserContext } from "../Userset";
-import { deleteComment, imageGenerator } from "../postHooks";
+import { deleteComment, imageGenerator } from "../LoginPage/costumHooks";
 
 const Comments = ({ newComment, fetchedComments }) => {
   const { user } = useContext(UserContext);
@@ -14,10 +14,9 @@ const Comments = ({ newComment, fetchedComments }) => {
     });
   }, [fetchedComments]);
   const handleClick = (event, articleId) => {
-    event.preventDefault(); 
+    event.preventDefault();
     setDeleted(articleId);
     deleteComment(articleId);
-   
   };
 
   if (newComment !== null) {
@@ -28,15 +27,20 @@ const Comments = ({ newComment, fetchedComments }) => {
       {fetchedComments
         .filter((comment) => comment.body && comment.comment_id !== deleted)
         .map((comment, index) => (
-          <li key={comment.comment_id}>
+          <li
+            class="p-5 m-5 bg-gray-100 rounded-xl shadow-lg"
+            key={comment.comment_id}
+          >
             {avatars[index] && (
-              <img
-                className="avatar-img"
-                src={avatars[index].avatar_url}
-                alt=""
-              />
+              <div class="flex items-center justify-center ">
+                <img
+                  class="max-h-14 rounded-full "
+                  src={avatars[index].avatar_url}
+                  alt=""
+                />
+              </div>
             )}
-            <p>{comment.author ? comment.author : user.username}:</p>
+            <h2>{comment.author ? comment.author : user.username}:</h2>
             <p>{comment.body}</p>
             <p>
               {formatDateTime(comment.created_at) !== "Invalid Date"
@@ -45,6 +49,7 @@ const Comments = ({ newComment, fetchedComments }) => {
             </p>
             {user.username === comment.author ? (
               <button
+                class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                 value={comment.comment_id}
                 onClick={(event) => {
                   handleClick(event, comment.comment_id);
@@ -55,7 +60,7 @@ const Comments = ({ newComment, fetchedComments }) => {
             ) : (
               ""
             )}
-            <p>{comment.votes}</p>
+            <p>votes: {comment.votes}</p>
           </li>
         ))}
     </ol>

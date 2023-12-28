@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticleId, getAllComments } from "./singleArticle";
 import ArticleBody from "./ArticleBody";
 import Comments from "./Comments";
-import { imageGenerator } from "../postHooks";
+import { imageGenerator } from "../LoginPage/costumHooks";
 import { ErrorComponent } from "../ErrorPage";
 
 const ArticleCard = () => {
