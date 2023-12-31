@@ -28,6 +28,8 @@ const ArticleCard = () => {
   useEffect(() => {
     getAllComments(article_id)
       .then((res) => {
+        console.log(res);
+
         setFetchedComment(res);
       })
       .catch(() => {

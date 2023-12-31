@@ -23,29 +23,26 @@ const Articles = ({ articles }) => {
       <ul>
         {articles.map((article, index) => (
           <li
-            class="bg-gradient-to-r
-            from-blue-500
-            via-red-500
-            to-yellow-500
-            rounded-lg
+            class="
             p-2
             mb-2"
             value={article.article_id}
             key={article.article_id}
             onClick={(event) => handleClick(event, article.article_id)}
           >
-            <div class="shadow-md text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg px-5 py-2.5 text-center">
-              <h2 class="p-3 border-2 rounded-md mb-3 bg-gray-100 ">
-                {article.title}
-              </h2>
+            <div class="shadow-md text-gray-900 bg-white font-medium rounded-lg px-5 py-2.5 text-center">
               <div class="flex items-center justify-center">
                 <img
-                  class="rounded-md"
+                  class="rounded-md max-h-500"
                   src={article.article_img_url}
                   alt="article-image"
                 />
               </div>
-              <div class="">
+              <div class="border-2 shadow-lg">
+                {" "}
+                <h2 class="p-3 border-2 rounded-md mb-3 bg-gray-100 ">
+                  {article.title}
+                </h2>
                 <h3 class="p-2">author: {article.author}</h3>
                 {avatars[index] && (
                   <div class="flex items-center justify-center">
@@ -56,7 +53,6 @@ const Articles = ({ articles }) => {
                     />{" "}
                   </div>
                 )}
-
                 <p>Comments: {article.comment_count}</p>
                 <p>votes: {article.votes}</p>
               </div>

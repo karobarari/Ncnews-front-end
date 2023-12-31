@@ -14,7 +14,7 @@ const Header = () => {
     navigate("/");
   };
   return (
-    <div class="flex flex-col bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 rounded-md w-full">
+    <div class="flex flex-col bg-gradient-to-r from-blue-100 via-red-100 to-yellow-100 rounded-md w-full">
       <h1 onClick={() => navigate("/")}>
         <span class="justify-center shadow-md text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
           NC News
@@ -32,7 +32,7 @@ const Header = () => {
               Logged in as: {user.username}
             </p>
             <div class="flex flex-row justify-between">
-              <p class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+              <p class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group border">
                 Today's Date: {formattedDate}
               </p>
               <button

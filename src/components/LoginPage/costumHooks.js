@@ -54,7 +54,6 @@ export const imageGenerator = (array) => {
           ? { username: user.username, avatar_url: user.avatar_url }
           : null;
       });
-
       return avatarUrls;
     })
     .catch((err) => {
