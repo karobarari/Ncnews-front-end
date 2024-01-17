@@ -8,7 +8,7 @@ Northcoders News has articles that are divided into different topics. Each artic
 Users can also add comments about an article. Comments can also be up or downvoted. A user can add comments and remove any comments that they have added.
 
 
-Technology
+Technology:
 React
 Tailwind CSS
 Axios
