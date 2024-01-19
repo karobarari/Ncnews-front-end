@@ -27,9 +27,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div class="relative p-0.5 mt-10  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 via-pink-300 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500  dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 flex items-center justify-center ">
+    <div class="relative p-0.5 mt-10  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 via-pink-300 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500  dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 flex items-center justify-center h-[600px] ">
       <form
-        class="px-64 py-20 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md"
+        class="px-64 py-20 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md border-2 border-black"
         onSubmit={handleSubmit}
       >
         <label>
