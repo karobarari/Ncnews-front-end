@@ -23,7 +23,8 @@ const Comments = ({ newComment, fetchedComments }) => {
     fetchedComments.unshift(newComment);
   }
   return (
-    <ol>
+    <ol
+    >
       {fetchedComments
         .filter((comment) => comment.body && comment.comment_id !== deleted)
         .map((comment, index) => (
