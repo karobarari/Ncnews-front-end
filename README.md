@@ -2,6 +2,8 @@ Link to deployed version: https://main--chic-tiramisu-33b534.netlify.app/
 
 Link to back-end repo: https://github.com/karobarari/Nc-news-project
 
+App plan on Figma: https://www.figma.com/file/CEv3h1M4cAqghpTmlsdWet/NC-news?type=whiteboard&t=nAmN8IfdigZnYTmt-0
+
 NC-News is a social news aggregation, web content rating, and discussion website similar to Reddit.
 
 Northcoders News has articles that are divided into different topics. Each article has user-curated ratings and can be up or downvoted by the user.
