@@ -7,11 +7,12 @@ const instance = axios.create({
 export const getQueries = (
   chosenTopic,
   order = "ASC",
-  sortby = "created_at"
+  sortby = "created_at",
+  p = 1
 ) => {
   if (chosenTopic || order || sortby) {
     return instance
-      .get(`/articles?topic=${chosenTopic}&sort_by=${sortby}&order=${order}`)
+      .get(`/articles?topic=${chosenTopic}&sort_by=${sortby}&order=${order}&p=${p}`)
       .then((res) => {
         return res.data.articles;
       })
@@ -21,7 +22,7 @@ export const getQueries = (
       });
   } else {
     return instance
-      .get(`/articles`)
+      .get(`/articles?p=${p}`)
       .then((res) => {
         return res.data.articles;
       })
