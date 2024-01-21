@@ -1,4 +1,4 @@
-Link to deployed version: https://main--chic-tiramisu-33b534.netlify.app/
+Link to deployed version: https://chic-tiramisu-33b534.netlify.app/
 
 Link to back-end repo: https://github.com/karobarari/Nc-news-project
 
