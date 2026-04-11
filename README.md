@@ -1,6 +1,9 @@
 NC News
+
 Live Demo: https://chic-tiramisu-33b534.netlify.app/
+
 Backend Repository: https://github.com/karobarari/Nc-news-project
+
 App Design (Figma): View Whiteboard
 
 NC News is a social news aggregation, content rating, and discussion platform inspired by Reddit.
