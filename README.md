@@ -1,39 +1,36 @@
-Link to deployed version: https://chic-tiramisu-33b534.netlify.app/
+NC News
+Live Demo: https://chic-tiramisu-33b534.netlify.app/
+Backend Repository: https://github.com/karobarari/Nc-news-project
+App Design (Figma): View Whiteboard
 
-Link to back-end repo: https://github.com/karobarari/Nc-news-project
+NC News is a social news aggregation, content rating, and discussion platform inspired by Reddit.
+Users can browse articles organised by topics, upvote or downvote articles and comments, and engage in discussions by posting comments. Registered users can also delete their own comments.
+Features
 
-App plan on Figma: https://www.figma.com/file/CEv3h1M4cAqghpTmlsdWet/NC-news?type=whiteboard&t=nAmN8IfdigZnYTmt-0
+Browse and filter articles by topic
+Upvote/downvote articles and comments
+Post new comments
+Delete your own comments
+Responsive design
 
-NC-News is a social news aggregation, web content rating, and discussion website similar to Reddit.
+Technologies Used
 
-Northcoders News has articles that are divided into different topics. Each article has user-curated ratings and can be up or downvoted by the user.
-Users can also add comments about an article. Comments can also be up or downvoted. A user can add comments and remove any comments that they have added.
-
-
-Technology:
-React
-Tailwind CSS
-Axios
+Frontend: React, Tailwind CSS, Axios
+Backend: (linked above)
 
 
 Getting Started
-
-Cloning repo from GitHub
-git clone https://github.com/karobarari/Ncnews-front-end.git
-
-Installing
-In the integrated terminal run the following commands to install dependencies:
-npm install 
-
-run the following command to install dev dependencies
-npm install -D
-
-Running App
-run the following command in the integrated terminal.
-npm run start
+1. Clone the Repository
+Bashgit clone https://github.com/karobarari/Ncnews-front-end.git
+cd Ncnews-front-end
+2. Install Dependencies
+Bashnpm install
+3. Run the Application
+Bashnpm run start
+The app will open in your browser at http://localhost:3000.
 
 Deployment
-This project has been deployed on render. Here is the link https://main--chic-tiramisu-33b534.netlify.app/
+This project is deployed on Netlify:
+→ https://main--chic-tiramisu-33b534.netlify.app/
 
-Author & Developer
-Karo Barari
+Author & Developer: Karo Barari
