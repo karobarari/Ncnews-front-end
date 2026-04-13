@@ -14,7 +14,7 @@ console.log(articleAuthor,
     atricleTitle,
     articleTopic,)
   return axios
-    .post("https://ncnews-yzwd.onrender.com/api/articles", {
+    .post("https://ncnews-project-api.onrender.com/api/articles", {
       title: atricleTitle,
       topic: articleTopic,
       author: articleAuthor,

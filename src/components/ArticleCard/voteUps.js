@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const voteUp = (articleId) => {
   return axios
-    .patch(`https://ncnews-yzwd.onrender.com/api/articles/${articleId}`, {
+    .patch(`https://ncnews-project-api.onrender.com/api/articles/${articleId}`, {
       inc_votes: 1,
     })
     .then((res) => {
@@ -17,7 +17,7 @@ export const voteUp = (articleId) => {
 };
 export const voteDown = (articleId) => {
   return axios
-    .patch(`https://ncnews-yzwd.onrender.com/api/articles/${articleId}`, {
+    .patch(`https://ncnews-project-api.onrender.com/api/articles/${articleId}`, {
       inc_votes: -1,
     })
     .then((res) => {

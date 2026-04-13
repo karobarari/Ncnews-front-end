@@ -2,7 +2,7 @@ import axios from "axios";
 
 const deleteArticle = (article_id) => {
   return axios
-    .delete(`https://ncnews-yzwd.onrender.com/api/articles/${article_id}`)
+    .delete(`https://ncnews-project-api.onrender.com/api/articles/${article_id}`)
     .then((res) => {
       return res;
     })

@@ -1,7 +1,7 @@
 import axios from "axios";
 export const getArticleId = (article_id) => {
   return axios
-    .get(`https://ncnews-yzwd.onrender.com/api/articles/${article_id}`)
+    .get(`https://ncnews-project-api.onrender.com/api/articles/${article_id}`)
     .then((res) => {
       return res.data.article;
     })
@@ -12,7 +12,7 @@ export const getArticleId = (article_id) => {
 };
 export const getAllComments = (articleId) => {
   return axios
-    .get(`https://ncnews-yzwd.onrender.com/api/articles/${articleId}/comments`)
+    .get(`https://ncnews-project-api.onrender.com/api/articles/${articleId}/comments`)
     .then((res) => {
       return res.data.comment;
     })
