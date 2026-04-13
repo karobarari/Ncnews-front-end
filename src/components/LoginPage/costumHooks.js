@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export const postComment = (articleId, Username, CmBody) => {
   return axios
     .post(
-      `https://ncnews-yzwd.onrender.com/api/articles/${articleId}/comments`,
+      `https://ncnews-project-api.onrender.com/api/articles/${articleId}/comments` ,
       {
         username: Username,
         body: CmBody,
@@ -21,7 +21,7 @@ export const postComment = (articleId, Username, CmBody) => {
 
 export const getUsers = () => {
   return axios
-    .get(`https://ncnews-yzwd.onrender.com/api/users`)
+    .get(`https://ncnews-project-api.onrender.com/api/users`)
     .then((res) => {
       return res.data.users;
     })
@@ -32,7 +32,7 @@ export const getUsers = () => {
 
 export const deleteComment = (comment_id) => {
   return axios
-    .delete(`https://ncnews-yzwd.onrender.com/api/comments/${comment_id}`)
+    .delete(`https://ncnews-project-api.onrender.com/api/comments/${comment_id}`)
     .then((res) => {
       return res;
     })
@@ -44,7 +44,7 @@ export const deleteComment = (comment_id) => {
 export const imageGenerator = (array) => {
   const usernames = array.map((data) => data.author);
   return axios
-    .get(`https://ncnews-yzwd.onrender.com/api/users`)
+    .get(`https://ncnews-project-api.onrender.com/api/users`)
     .then((response) => {
       const users = response.data.users;
 
