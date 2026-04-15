@@ -6,7 +6,6 @@ Backend Repository: https://github.com/karobarari/Nc-news-project
 
 Frontend Repository: https://github.com/karobarari/Ncnews-front-end
 
-Design Reference (Figma): View Whiteboard
 
 Overview
 
