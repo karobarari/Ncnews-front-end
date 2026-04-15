@@ -4,36 +4,54 @@ Live Demo: https://chic-tiramisu-33b534.netlify.app/
 
 Backend Repository: https://github.com/karobarari/Nc-news-project
 
-App Design (Figma): View Whiteboard
+Frontend Repository: https://github.com/karobarari/Ncnews-front-end
 
-NC News is a social news aggregation, content rating, and discussion platform inspired by Reddit.
-Users can browse articles organised by topics, upvote or downvote articles and comments, and engage in discussions by posting comments. Registered users can also delete their own comments.
-Features
+Design Reference (Figma): View Whiteboard
 
+Overview
+
+NC News is a social news aggregation and discussion platform inspired by Reddit. It allows users to explore articles by topic, interact through voting systems, and participate in discussions via comments.
+
+Key Features
 Browse and filter articles by topic
-Upvote/downvote articles and comments
-Post new comments
-Delete your own comments
-Responsive design
+Upvote and downvote articles and comments
+Post new comments on articles
+Delete comments created by the user
+Fully responsive user interface
+Tech Stack
 
-Technologies Used
+Frontend:
 
-Frontend: React, Tailwind CSS, Axios
-Backend: (linked above)
+React
+Tailwind CSS
+Axios
 
+Backend:
 
+See linked repository for implementation details
 Getting Started
-1. Clone the Repository
-Bashgit clone https://github.com/karobarari/Ncnews-front-end.git
+
+1. Clone the repository
+
+git clone https://github.com/karobarari/Ncnews-front-end.git
 cd Ncnews-front-end
-2. Install Dependencies
-Bashnpm install
-3. Run the Application
-Bashnpm run start
-The app will open in your browser at http://localhost:3000.
+
+2. Install dependencies
+
+npm install
+
+3. Run the application
+
+npm run start
+
+The app will be available at:
+http://localhost:3000
 
 Deployment
-This project is deployed on Netlify:
-→ https://main--chic-tiramisu-33b534.netlify.app/
 
-Author & Developer: Karo Barari
+The project is deployed on Netlify:
+https://main--chic-tiramisu-33b534.netlify.app/
+
+Author Karo Barari
+
+Developed by pok
